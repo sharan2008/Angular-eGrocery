@@ -3,6 +3,7 @@ import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import {RouterModule} from '@angular/router'
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
 // import {AngularFireModule} from 'angularFire2';
 // import {AngularFireDatabaseModule} from 'angularfire2/database';
 // import {AngularFireAuthModule} from 'angularFire2/auth';
@@ -17,6 +18,7 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,19 +30,21 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
     OrderSuccessComponent,
     MyOrdersComponent,
     AdminProductsComponent,
-    AdminOrdersComponent
+    AdminOrdersComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
+    NgbModule.forRoot(),
     RouterModule.forRoot([
       {path:'',             component:HomeComponent},
       {path:'products',     component:ProductsComponent},
-      {path:'shopping-cart', component:HomeComponent},
+      {path:'shopping-cart', component:ShoppingCartComponent},
       {path:'check-out',     component:CheckOutComponent},
       {path:'order-success  ', component:OrderSuccessComponent},
-      {path:'login' , component:LoginComponent}
+      {path:'login' , component:LoginComponent},
       {path:'admin/products', component:AdminProductsComponent},
-      {path:'admin-orders', component:AdminOrdersComponent}
+      {path:'admin/orders', component:AdminOrdersComponent}
 
 
 
